@@ -4,23 +4,27 @@
 
 template <typename Type> 
 bool equal(Type a, Type b) {
-  std::cout << "Using template function" << std::endl;
+  std::cout << "Using template function - checking equality for a: " << a << " and b: " << b << std::endl;
   return a == b;
 }
 
 bool equal(double a, double b) {
   std::cout << "Using double function - checking equality for a: " << a << " and b: " << b << std::endl;
-  std::setprecision(10);
   return a - b < 0.00001;
 }
 
 
 int main() {
+  std::cout << std::fixed << std::setprecision(10);
   std::cout << "Task 1" << std::endl;
 
+  std::cout << equal("a", "a") << std::endl;
+  std::cout << equal("a", "b") << std::endl;
   std::cout << equal(1, 1) << std::endl;
+  std::cout << equal(1, 0) << std::endl;
   std::cout << equal(1.00001, 1.00001) << std::endl;
   std::cout << equal(1.0000002, 1.0000001) << std::endl;
+  std::cout << equal(1.0002, 1.0001) << std::endl;
 
   std::cout << std::endl;
 
